@@ -69,9 +69,8 @@ def task4():
 task4()
 
 
-
 def task5():
-    tprint("alex", font= "rnd-xlarge")
+    tprint("alex", font="rnd-xlarge")
 
 
 task5()
