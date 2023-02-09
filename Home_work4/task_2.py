@@ -6,8 +6,6 @@ Name: Taras Schevchenko
 Age: 47 years
 """
 
-info = 'Taras Shevchenko*1814-03-09*1861-03-10'
-
 x = input().split("*")
-print('name = ',x[0])
-print('Age: ',int(x[2][:4])-int(x[1][:4]),' years')
+print('name: ', x[0])
+print('Age: ', int(x[2][:4]) - int(x[1][:4]), ' years')

@@ -5,6 +5,6 @@
 """
 
 a = str(input())
-a=a.title()
+a = a.title()
 
-print(a.replace('_',''))
+print(a.replace('_', ''))
