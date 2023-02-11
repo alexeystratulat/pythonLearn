@@ -3,7 +3,76 @@
 Використовуючи цю функцію, вивести на екран значення косинусів кутів 60, 45 та 40 градусів.
 """
 
-from bs4 import BeautifulSoup
+from math import pi, cos
+
+
+def degrees2radians(degrees):
+    radians = degrees * pi / 180
+    return radians
+
+
+result_first = cos(degrees2radians(60))
+result_second = cos(degrees2radians(45))
+result_third = cos(degrees2radians(40))
+
+print("cos 60°:", result_first)
+print("cos 45°:", result_second)
+print("cos 40°:", result_third)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""from bs4 import BeautifulSoup
 import requests
 
 
@@ -25,3 +94,4 @@ def degrees_to_radians(degree):
 
 
 degrees_to_radians(int(input("сколько градусов ? ")))
+"""

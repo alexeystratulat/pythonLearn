@@ -6,7 +6,7 @@
 import math
 
 
-def konus(r, h):
+def cone_square_and_volume(r, h):
     volume = (math.pi * r ** 2) / 3
     area = math.pi * r * h + (math.pi * r ** 2)
     return area, volume
@@ -14,4 +14,4 @@ def konus(r, h):
 
 r = float(input("введіть радiус "))
 h = float(input("тепер- висоту "))
-print("Площа поверхншi конуса = ", konus(r, h)[0], "Периметр конуса = ", konus(r, h)[1])
+print("Площа поверхншi конуса = ", cone_square_and_volume(r, h)[0], "Периметр конуса = ", cone_square_and_volume(r, h)[1])

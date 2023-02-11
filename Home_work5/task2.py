@@ -5,6 +5,7 @@
 """
 import math
 
+
 def triangle(a, b):
     perimetr = a + b + (math.sqrt(a ** 2 + b ** 2))
     area = (a * b) / 2
@@ -15,5 +16,3 @@ def triangle(a, b):
 a = float(input("введіть довжиру першого катета "))
 b = float(input("тепер- другого "))
 print("Площа трикутника = ", triangle(a, b)[0], "Периметр = ", triangle(a, b)[1])
-
-
