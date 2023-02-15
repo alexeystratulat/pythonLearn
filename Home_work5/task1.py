@@ -88,7 +88,7 @@ def cos_table(degree):
     return objects.get(degree)
 
 
-def degrees_to_radians(degree):
+def degrees_to_radians(* degree, start = 0, ):
     print(degree, "° равно ", degree * 0.175, " радиан")
     print("косинус", degree, "° равен", cos_table(degree))
 
