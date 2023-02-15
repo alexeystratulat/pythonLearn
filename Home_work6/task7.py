@@ -13,3 +13,23 @@
 Примітка: на ваш вибір прийняти, з яких чисел починається послідовність: або з 0 та 1, або з 1 та 1.
 
 """
+
+
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+def main():
+    numb = 20
+
+    if numb <= 0:
+        print("incorrect")
+    else:
+        print("result is:", fibonacci(numb - 1))
+
+
+if __name__ == '__main__':
+    main()

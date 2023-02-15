@@ -10,3 +10,24 @@
 Це завдання бажано вирішити за допомогою каскадних інструкцій if... elif... else.
 
 """
+
+
+def sign(x):
+    if x > 0:
+
+        return 1
+    elif x < 0:
+
+        return -1
+    elif x == 0:
+
+        return 0
+
+
+def main():
+    x = int(input('input x: '))
+    print(sign(x))
+
+
+if __name__ == '__main__':
+    main()

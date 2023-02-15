@@ -18,3 +18,38 @@ def solve_quadratic_equation(a, b, c):
 
 Це перше ваше використання спеціального значення None.
 """
+import math
+
+
+def solve_quadratic_equation(a, b, c):
+    d = b ** 2 - 4 * a * c
+    sqrtr = math.sqrt(abs(d))
+    if d > 0:
+        x1 = (-b + sqrtr) / (2 * a)
+        x2 = (-b - sqrtr) / (2 * a)
+        return x1, x2
+
+    elif d == 0:
+        x3 = -b / (2 * a)
+        return x3, None
+
+    else:
+        return None, None
+
+
+def tests():
+    assert solve_quadratic_equation(2, 6, 4) == (-1.0, -2.0)
+    assert solve_quadratic_equation(1, -6, 9) == (3.0, None)
+    assert solve_quadratic_equation(3, -4, 2) == (None, None)
+
+
+def main():
+    a = float(input('1st number: '))
+    b = float(input('2nd number: '))
+    c = float(input('3rd number: '))
+    print(solve_quadratic_equation(a, b, c))
+
+
+if __name__ == "__main__":
+    tests()
+    main()
