@@ -5,3 +5,22 @@
 числа, що діляться на 5, на рядок Buzz
 числа, що діляться і на 3, і на 5, на рядок FizzBuzz
 """
+
+
+def main():
+    for i in range(1, 101):
+        if i % 3 == 0 and i % 5 == 0:
+            print('FizzBuzz')
+            continue
+        elif i % 3 == 0:
+            print('Fizz')
+            continue
+        elif i % 5 == 0:
+            print('Buzz')
+            continue
+
+        print(i)
+
+
+if __name__ == '__main__':
+    main()
