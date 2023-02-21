@@ -12,7 +12,6 @@ from random import randint
 
 def main():
     random = randint(0, 10)
-    print(random)
     while True:
         number = int(input("Input the number :"))
 
@@ -20,7 +19,7 @@ def main():
             print("You win!")
             break
         else:
-            print("Try more ")
+            print("Try more your number is bigger ?", random < number )
 
 
 if __name__ == "__main__":

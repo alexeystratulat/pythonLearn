@@ -22,7 +22,7 @@ def fibonachi_number(number):
         for i in range(2, number):
             fibonachi.append(fibonachi[i - 1] + fibonachi[i - 2])
 
-    return (fibonachi[number - 1])
+    return fibonachi[number - 1]
 
 
 def main():
