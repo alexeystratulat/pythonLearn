@@ -12,15 +12,22 @@ calculate_wheat_chess_position(kilograms)  # prints 'b3'
 """
 from math import log2
 
-def calculate_wheat_chess_position(kilograms):
 
+def calculate_wheat_chess_position(kilograms):
+    gram = (kilograms * 1000000) / 35
+    chess = int(log2(gram) + 1)
+    return "abcdefgh"[chess // 8] + str(chess % 8)
 
 
 def main():
-    kilograms = input("How many kilograms ?")
-    calculate_wheat_chess_position(kilograms)
+    kilograms = float(input("How many kilograms ?"))
+    print(calculate_wheat_chess_position(kilograms))
 
+
+def test():
+    assert calculate_wheat_chess_position(0.03584) == 'b3'
 
 
 if __name__ == '__main__':
     main()
+    test()
