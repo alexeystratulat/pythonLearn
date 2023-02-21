@@ -5,18 +5,17 @@
 """
 
 
-mas_vertital = ['8', '7', '6','5','4','3','2','1']
-mas_horizontal = ['a','b','c','d','e','f','g','h']
-
-chessboard_mas = [mas_horizontal] * 8
-print(chessboard_mas, "ffifiif",end = ' ')
-
+def logic(start, finish):
+    diff_letters = ord(finish[0]) - ord(start[0])
+    diff2 = int(finish[1]) - int(start[1])
+    return abs(diff_letters) * abs(diff2) == 2
 
 
-for i in range(len(chessboard_mas)):
-    for j in range(len(chessboard_mas)):
+def main():
+    start = input("start ")
+    finish = input("finish ")
+    print("You can do it" if logic(start, finish) else "No way")
 
-        chessboard_mas[i][j] = str(mas_horizontal[j])+str(mas_vertital[j])
-        print(chessboard_mas[i][j], end = ' ')
-    print()
-print(chessboard_mas)
+
+if __name__ == '__main__':
+    main()

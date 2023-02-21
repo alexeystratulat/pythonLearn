@@ -11,16 +11,16 @@ calculate_wheat_chess_position(kilograms)  # prints 'b3'
 
 """
 
-seed_weight = 0.03584
-def calculate_wheat_chess_position(killograms):
 
-    a1 =  killograms/0.03584
-    return secondp
+def calculate_wheat_chess_position(kilograms):
+
 
 
 def main():
-    killograms = input('How many killograms: ')
-    print(calculate_wheat_chess_position(killograms))
+    kilograms = input("How many kilograms ?")
+
+
+
 
 if __name__ == '__main__':
     main()

@@ -15,7 +15,7 @@ def circles_intersect(x1, y1, r1, x2, y2, r2):
 def main():
     x1, y1, r1, x2, y2, r2 = map(int, input("Введи 6 значений: ").split())
 
-    circles_intersect(x1, y1, r1, x2, y2, r2)
+    print("Don't intersect" if circles_intersect(x1, y1, r1, x2, y2, r2) else " intersect")
 
 
 if __name__ == '__main__':
