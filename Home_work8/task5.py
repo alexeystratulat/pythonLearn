@@ -8,15 +8,20 @@
              pass
 """
 
+import random
+
 
 def get_max_digit(number):  # returns int
-    pass
+    res = list(map(int, str(number)))
+
+    return max(res)
 
 
 def main():
     number = 123456789012
-    res = list(map(int, str(number)))
-    print(res)
+    print(get_max_digit(number))
+    print(get_max_digit(random.randint(100, 999999)))
+
 
 if __name__ == '__main__':
     main()
