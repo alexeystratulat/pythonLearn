@@ -9,15 +9,15 @@ def index(lst, elem):  # returns integer or None
 
 def index(lst, elem):  # returns integer or None
     for i in range(0, len(lst)):
-        if i == elem:
+        if lst[i] == elem:
             return i
 
-    return None
+
 
 
 def main():
-    numbers = [0, 1, 2, 3, 4, 5, 6, 5, 8, 9]
-    print(index(numbers, 5))
+    numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+    print(index(numbers, 50))
 
 
 if __name__ == '__main__':

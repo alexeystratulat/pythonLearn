@@ -14,12 +14,17 @@ lst1[3].append(0)
 print(lst1[3], lst2[3])  # ['b', 0] ['b']
 """
 from typing import Union
-def copydeep(obj: Union[str,int,float,bool,list,tuple]):
-
-    return obj
 
 
+def copydeep(obj: Union[str, int, float, bool, list, tuple]):
+    if isinstance(obj, (str, int, float, bool)):
+        return obj
 
+    if isinstance(obj, tuple):
+        return tuple(copydeep(x) for x in obj)
+
+    if isinstance(obj, list):
+        return [copydeep(x) for x in obj]
 
 
 def main():

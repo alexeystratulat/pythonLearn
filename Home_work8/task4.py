@@ -7,7 +7,7 @@ def gen_primes():  # returns list of ints
 
 
 def gen_primes():
-    list = []
+    result = []
     for i in range(2, 100):
         counter = 0
         for j in range(i - 1, 1, -1):
@@ -15,9 +15,9 @@ def gen_primes():
             if (i % j) == 0:
                 counter += 1
         if counter == 0:
-            list.append(i)
+            result.append(i)
 
-    return list
+    return result
 
 
 def main():
