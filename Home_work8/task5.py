@@ -16,6 +16,7 @@ def get_max_digit(number):  # returns int
 
     return max(res)
 
+
 def get_max_digit_b(number):
     num = 0
     while number >= 1:
@@ -31,6 +32,7 @@ def main():
     print(get_max_digit(random.randint(100, 999999)))
     print(get_max_digit_b(number))
     print(get_max_digit_b(random.randint(100, 999999)))
+
 
 if __name__ == '__main__':
     main()
