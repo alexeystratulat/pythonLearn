@@ -21,7 +21,7 @@ a) Копія має бути відсортована за значенням �
 
 def list_sort(lst):  # returns integer or None
 
-    return sorted(lst, key=float) or None
+    return sorted(lst, key=float)
 
 
 def list_sort1_digits(lst):  # returns integer or None
