@@ -21,12 +21,19 @@ a) Копія має бути відсортована за значенням �
 
 def list_sort(lst):  # returns integer or None
 
-    return sorted([int(s) for s in lst]) or None
+    return sorted(lst, key=float) or None
+
+
+def list_sort1_digits(lst):  # returns integer or None
+
+    return sorted(lst, key=lambda num: str(num)[0])
 
 
 def main():
     list = [5, '9', 0, '452', 6.5, '6', 1, 2]
     print(list_sort(list))
+    list2 = [472, 326, 1, 999.0, '1101000', '99', 9, '20', 863, '0']
+    print(list_sort(list2))
 
 
 if __name__ == '__main__':
