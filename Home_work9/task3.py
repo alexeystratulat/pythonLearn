@@ -33,7 +33,7 @@ def main():
     error_msg = "Result must be '{1: 'a', 2: 1, 3: 2.0, 4: ['b']}'"
     assert dict_2 == {1: "a", 2: 1, 3: 2.0, 4: ["b"]}, error_msg
     print(dict_2)
-    print(dict_1)
+
 
 
 if __name__ == "__main__":
