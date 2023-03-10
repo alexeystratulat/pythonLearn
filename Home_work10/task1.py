@@ -28,3 +28,35 @@ print(copy[3]['d'] is copy)  # True
 print(copy[-1] is not test_data[-1])  # True
 print(copy[-1] is copy[-1]['f'])  # True
 """
+
+from typing import Union
+
+
+def copydeep(
+    obj: Union[str, int, float, bool, list, tuple, dict]
+):
+    if isinstance(obj, (int, float, str, bool)):
+        return obj
+
+    if isinstance(obj, tuple):
+        return tuple(copydeep(x) for x in obj)
+
+    if isinstance(obj, list):
+        return [copydeep(x) for x in obj]
+
+    if isinstance(obj, dict):
+        return {copydeep(key): copydeep(value) for key, value in obj.items()}
+
+
+def main():
+    dict_1 = {1: "a", 2: 1, 3: 2.0, 4: ["b"]}
+    dict_2 = copydeep(dict_1)
+    dict_1[1] = 33
+    error_msg = "Result must be '{1: 'a', 2: 1, 3: 2.0, 4: ['b']}'"
+    assert dict_2 == {1: "a", 2: 1, 3: 2.0, 4: ["b"]}, error_msg
+    print(dict_2)
+
+
+
+if __name__ == "__main__":
+    main()
