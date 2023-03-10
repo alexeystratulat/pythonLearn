@@ -24,13 +24,15 @@ def group_by_surname(list_of_enrollees):  # returns 4 ints
     counter_for_group_4 = 0
     for i in list_of_enrollees:
 
-        if i.split()[1][0] in group_1:
+        name = i.split()[1][0]
+
+        if name.upper() in group_1:
             counter_for_group_1 += 1
-        if i.split()[1][0] in group_2:
+        if name.upper() in group_2:
             counter_for_group_2 += 1
-        if i.split()[1][0] in group_3:
+        if name.upper() in group_3:
             counter_for_group_3 += 1
-        if i.split()[1][0] in group_4:
+        if name.upper() in group_4:
             counter_for_group_4 += 1
 
     return counter_for_group_1, counter_for_group_2, counter_for_group_3, counter_for_group_4
