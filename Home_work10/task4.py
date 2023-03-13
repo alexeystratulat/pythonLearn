@@ -18,3 +18,37 @@
 Але краще застосувати Двійковий пошук: відео з поясненням, вікіпедія
 Ввід від користувача оформити функціями get_integer, get_str, що побудовані з врахуванням практик, описаних на лекції.
 """
+
+from random import randint
+
+
+def main():
+    print("Who guesses ?")
+    print("1-comp 2-you")
+    a = input()
+    if a == 1:
+        game1()
+
+    elif a == 2:
+        game2()
+
+
+def game1():
+    random = randint(0, 10)
+    print(random)
+    while True:
+        number = int(input("Input the number :"))
+
+        if number == random:
+            print("You win!")
+            break
+        else:
+            print("Try more. Your number is bigger ?" if random < number else "Your number is lower")
+
+
+def game2():
+    pass
+
+
+if __name__ == "__main__":
+    main()
