@@ -23,42 +23,35 @@ def pemrtuate(text):  # returns permuted text
 
 def pemrtuate(text):  # returns permuted text
     text = text.split()
-    text_to_change = list(text)
+    text_to_change = text
     text_to_print = []
     for i in text_to_change:
         text_to_print.append(change(i))
 
-    print(" ".join(text_to_print))
+    return " ".join(text_to_print)
 
 
 def change(word):
-
     if len(word) > 3:
-        word_for_return = [None for x in range(len(word))]
+        word_for_return = [None] * len(word)
         word_for_return[0] = word[0]
         word_for_return[len(word) - 1] = word[len(word) - 1]
 
         for i in range((len(word)) // 3):
-
             word_for_return[i + 1] = word[len(word) - 2 - i]
             word_for_return[len(word) - 2 - i] = word[i + 1]
 
+        if word_for_return[(len(word)) // 2] is None:
+            word_for_return[(len(word)) // 2] = word[(len(word)) // 2]
 
-        if word_for_return[(len(word))//2] is None:
-            word_for_return[(len(word))//2] = word[(len(word))//2]
-
-
-
-
-
-        return("".join(word_for_return))
+        return "".join(word_for_return)
     else:
         return word
 
 
 def main() -> None:
     text = "The list methods make it very easy to use a list as a stack where the last element added is the first element retrieved"
-    pemrtuate(text)
+    print (pemrtuate(text))
 
 
 if __name__ == "__main__":

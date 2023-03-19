@@ -33,30 +33,40 @@ from typing import Union
 
 
 def copydeep(
-    obj: Union[str, int, float, bool, list, tuple, dict]
-):
-    if isinstance(obj, (int, float, str, bool)):
+    obj: Union[str, int, float, bool, list, dict], memory=None
+) -> Union[str, int, float, bool, list, dict]:
+    if memory is None:
+        memory = {}
+
+    if id(obj) in memory:
+        return memory[id(obj)]
+
+    elif isinstance(obj, (int, float, str, bool)):
+        memory[id(obj)] = obj
         return obj
 
-    if isinstance(obj, tuple):
-        return tuple(copydeep(x) for x in obj)
+    elif isinstance(obj, list):
+        copy_list = []
+        memory[id(obj)] = copy_list
+        for el in obj:
+            copy_list.append(copydeep(el, memory))
+        return copy_list
 
-    if isinstance(obj, list):
-        return [copydeep(x) for x in obj]
+    elif isinstance(obj, dict):
+        copy_dict = {}
+        memory[id(obj)] = copy_dict
+        for key, value in obj.items():
+            copy_dict[copydeep(key, memory)] = copydeep(value, memory)
+        return copy_dict
 
-    if isinstance(obj, dict):
-        return {copydeep(key): copydeep(value) for key, value in obj.items()}
 
+def test_deep_copy():
+    test_data = [1, 2, [4, 5, 6], {"A": "B", "c": [3658]}, 2.0, {"e": 0}]
+    test_data[3]["d"] = test_data
+    copy = copydeep(test_data)
 
-def main():
-    dict_1 = {1: "a", 2: 1, 3: 2.0, 4: ["b"]}
-    dict_2 = copydeep(dict_1)
-    dict_1[1] = 33
-    error_msg = "Result must be '{1: 'a', 2: 1, 3: 2.0, 4: ['b']}'"
-    assert dict_2 == {1: "a", 2: 1, 3: 2.0, 4: ["b"]}, error_msg
-    print(dict_2)
-
+    assert copy[3]["d"] is not test_data[3]["d"], "true"
 
 
 if __name__ == "__main__":
-    main()
+    test_deep_copy()

@@ -12,7 +12,7 @@ import random
 
 
 def password_generator(pass_lenght: int):
-    password = [None for x in range(pass_lenght)]
+    password = [None] * pass_lenght
     word_of_password_lower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
                               's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     word_of_password_upper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
@@ -20,7 +20,7 @@ def password_generator(pass_lenght: int):
     word_of_password_numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
     all_word = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
                 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f',
-                'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+                'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '_']
 
     password[random.randint(0, pass_lenght - 1)] = random.choice(word_of_password_numbers)
 
@@ -38,9 +38,9 @@ def password_generator(pass_lenght: int):
 
     for i in range(pass_lenght):
         if password[i] is None:
-            password[i] = (random.choice(all_word))
+            password[i] = random.choice(all_word)
 
-    return ("".join(password))
+    return "".join(password)
 
 
 def main() -> None:
