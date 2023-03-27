@@ -20,11 +20,12 @@ class Circle:
         self.r = r
 
     def location_of_point(self, point):
-        return self.r - (round(math.sqrt((self.x - point.x) ** 2 + (self.y - point.y) ** 2), 2)) >= 0
+        distance_between_circle_and_point =self.r - (round(math.sqrt((self.x - point.x) ** 2 + (self.y - point.y) ** 2), 2))
+        return distance_between_circle_and_point >= 0
 
 
 def main():
-    circle1 = Circle(10, 10, 8)
+    circle1 = Circle(10, 10, 3)
     point = Point(5, 5)
     print(circle1.location_of_point(point))
 
